@@ -1,9 +1,14 @@
+import { JSX } from "react/jsx-runtime";
 import CalculateTemperatureDelta from "./Projects/CalculateTemperatureDelta";
 
-export default function ProjectPanel() {
+type ProjectPanelProps = {
+    SelectedProject: () => JSX.Element
+}
+
+export default function ProjectPanel({ SelectedProject }: ProjectPanelProps) {
     return (
         <div>
-            <CalculateTemperatureDelta />
+            {SelectedProject && <SelectedProject />}
         </div>
     )
 }

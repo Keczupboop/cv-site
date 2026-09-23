@@ -1,7 +1,12 @@
+import { JSX } from "react/jsx-runtime";
 import CodePanel from "./CodePanel";
 import ProjectPanel from "./ProjectPanel";
 
-export default function Project() {
+type ProjectProps = {
+    SelectedProject: () => JSX.Element
+}
+
+export default function Project( { SelectedProject }: ProjectProps ) {
     return (
         <div className="min-h-screen py-8 px-4 sm:px-8 lg:px-12">
             <div className="max-w-7xl mx-auto space-y-6">
@@ -17,7 +22,7 @@ export default function Project() {
                 <main className="flex flex-row gap-6">
                 {/* Project panel */}
                     <div className="w-1/2 bg-gray-600 rounded-xl shadow-sm border border-gray-600 p-4 overflow-hidden">
-                        <ProjectPanel />
+                        <ProjectPanel SelectedProject={SelectedProject}/>
                     </div>
 
                     {/* Code panel */}

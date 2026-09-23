@@ -50,28 +50,5 @@ export default function CodePanel() {
                 </pre>
             </div>
         </div>
-
-        // <div className="border rounded-lg p-2">
-        //     <div className="flex justify-center gap-10 border rounded-lg p-2">
-        //         <button 
-        //             onClick={() => setLanguage("ts")}
-        //             className={language === "ts" ? "bg-blue-500 text-white px-4 py-2 rounded" : "px-4 py-2 rounded"}>
-        //                 Type Script
-        //         </button>
-        //         <button 
-        //             onClick={() => setLanguage("py")}
-        //             className={language === "py" ? "bg-blue-500 text-white px-4 py-2 rounded" : "px-4 py-2 rounded"}>
-        //                 Python
-        //         </button>
-        //     </div>
-        
-        //     {language === "ts" && (
-        //         <p>Type Script</p>
-        //     )}
-
-        //     {language === "py" && (
-        //         <p>Python</p>
-        //     )}
-        // </div>
     )
 }
