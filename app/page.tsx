@@ -50,7 +50,7 @@ export default function Home() {
       )}
       
       {SelectedProject && (
-        <Project SelectedProject={SelectedProject}/>
+        <Project SelectedProject={SelectedProject} projectID={selectedProject}/>
       )}
     </main>
   )

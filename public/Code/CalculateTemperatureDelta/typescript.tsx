@@ -3,31 +3,13 @@
 import { useState } from "react"
 
 export default function CalculateTemperatureDelta() {
-    const [Q, setQ] = useState<number | string>(0)
-    const [Cw, setCw] = useState<number | string>(0)
-    const [m, setM] = useState<number | string>(0)
+    const [Q, setQ] = useState(0)
+    const [Cw, setCw] = useState(0)
+    const [m, setM] = useState(0)
 
     const [result, setResult] = useState<number | null>(null);
 
     function calculateDeltaT() {
-        if (typeof Q === "string") {
-            setQ("NaN")
-            setResult(null)
-            return
-        }
-
-        if (typeof Cw === "string") {
-            setCw("NaN")
-            setResult(null)
-            return
-        }
-
-        if (typeof m === "string") {
-            setM("NaN")
-            setResult(null)
-            return
-        }
-
         const numQ = Number(Q);
         const numCw = Number(Cw);
         const numM = Number(m);
@@ -57,20 +39,12 @@ export default function CalculateTemperatureDelta() {
 
                     <div className="relative">
                         {/*Input*/}
-                        {/*Zmienić żeby dało się usunąć to 0 z początku*/}
                         <input 
-                            className={`w-full px-3 py-2 border rounded-lg shadow-sm text-gray-400 transition-colors ${
-                                Q === "NaN" 
-                                ? "border-red-300 border-3"
-                                : "border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-blue-500 focus:text-gray-800"
-                            }`}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-blue-500 focus:text-gray-800 transition-colors"
                             type='number'
                             step="any"
                             value={Q}
-                            onChange={(event) => {
-                                const val = event.target.value;
-                                setQ(val === "" ? "" : parseFloat(val));
-                            }}
+                            onChange={(event) => event.target.value === "" ? "" : setQ(parseFloat(event.target.value))}
                         />
 
                         {/*Jednostka*/}
@@ -94,18 +68,11 @@ export default function CalculateTemperatureDelta() {
                     <div className="relative">
                         {/*Input*/}
                         <input 
-                            className={`w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-blue-500 focus:text-gray-800 transition-colors ${
-                                Cw === "NaN" 
-                                ? "border-red-300 border-3"
-                                : "border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-blue-500 focus:text-gray-800"
-                            }`}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-blue-500 focus:text-gray-800 transition-colors"
                             type='number'
                             step="any"
                             value={Cw}
-                            onChange={(event) => {
-                                const val = event.target.value;
-                                setCw(val === "" ? "" : parseFloat(val));
-                            }}
+                            onChange={(event) => event.target.value === "" ? "" : setCw(parseFloat(event.target.value))}
                         />
 
                         {/*Jednostka*/}
@@ -129,18 +96,11 @@ export default function CalculateTemperatureDelta() {
                     <div className="relative">
                         {/*Input*/}
                         <input 
-                            className={`w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-blue-500 focus:text-gray-800 transition-colors ${
-                                m === "NaN" 
-                                ? "border-red-300 border-3"
-                                : "border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-blue-500 focus:text-gray-800"
-                            }`}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-blue-500 focus:text-gray-800 transition-colors"
                             type='number'
                             step="any"
                             value={m}
-                            onChange={(event) => {
-                                const val = event.target.value;
-                                setM(val === "" ? "" : parseFloat(val));
-                            }}
+                            onChange={(event) => event.target.value === "" ? "" : setM(parseFloat(event.target.value))}
                         />
 
                         {/*Jednostka*/}
