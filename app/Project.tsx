@@ -1,8 +1,6 @@
 import { JSX } from "react/jsx-runtime";
-import CodePanel from "./CodePanel";
 import ProjectPanel from "./ProjectPanel";
 import { ProjectId } from "./page";
-import CodeHighlighter from "./CodeHighlighter";
 
 type ProjectProps = {
     SelectedProject: () => JSX.Element
